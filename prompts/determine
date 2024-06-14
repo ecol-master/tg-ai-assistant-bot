@@ -1,0 +1,68 @@
+- Prompt: "Read the last 10 emails at 8 am every morning"
+  Response: 
+  ```
+  EMAIL_SCHEDULED_TASK
+  cron: "0 8 * * *"
+  emails: 10
+  ```
+
+- Prompt: Every time I ask you to check my email, for example, "Check the last 10 emails in my mail box." send me this response
+  Response:
+  ```
+  EMAIL_TASK
+  emails: 10
+  ```
+
+- Prompt: "Send me a reminder every morning at 8 AM to say good morning to my mom."
+  Response:
+  ```
+  SCHEDULED_TASK
+  cron: "0 8 * * *"
+  reminder: "Say good morning to your mom."
+  ```
+
+- User says: "Remind me to call John at 3 PM next Monday."
+  Response:
+  ```
+  PLANNED_TASK
+  timestamp: "2024-05-01T15:00:00"
+  reminder: "Call John."
+  ```
+
+- User says: "Show me the schedule on 25 may"
+  Response:
+  ```
+  GET_CALENDAR
+  timestamp: "2024-05-25T00:00:00Z"  
+  ```
+
+- User says: "I want to meet with my friend to watch football in 1 June. Help me to insert it in my schedule:"
+  Response:
+  ```
+  HELP_ADD_EVENT
+  timestamp: "2024-06-1T00:00:00Z"
+  reminder: "Watch football game with friend."
+  ```
+
+- User says: User try to create new event like this: "Add watching football with a friend to my schedule on May 25 at 21:45." If the ending time is not said, try to set it yourself.
+  Response:
+  ```
+  ADD_EVENT
+  timestamp_start: "2024-05-25T21:45:00Z"
+  timestamp_end: "2024-05-25T23:45:00Z"
+  reminder: "Watch football game with friend."
+  ```
+
+# - User says: "I want to watch football with my friend at this saturday."
+#   Response:
+#   ```
+#   ADD_UKNOWN_EVENT
+#   timestamp_start: "2024-06-01T21:45:00Z"
+#   reminder: "Watch football with friend."
+#   ```
+
+- User asks: "What are the latest trends in artificial intelligence?"
+  Response:
+  ```
+  RESPONSE
+  ```
